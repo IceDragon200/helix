@@ -153,3 +153,12 @@ indent = { tab-width = 2, unit = "  " }
 # roots = []
 #
 # indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "julia"
+scope = "source.julia"
+injection-regex = "julia"
+file-types = ["jl"]
+roots = []
+
+indent = { tab-width = 2, unit = "  " }
