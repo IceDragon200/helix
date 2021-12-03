@@ -206,22 +206,25 @@
 <tr><td><code>&lt;</code></td><td>Unindent selection</td><td><code>unindent</code></td></tr>
 <tr><td><code>=</code></td><td>Format selection (<strong>LSP</strong>)</td><td><code>format_selections</code></td></tr>
 <tr><td><code>d</code></td><td>Delete selection</td><td><code>delete_selection</code></td></tr>
+<tr><td><code>Alt-d</code></td><td>Delete selection, without yanking</td><td><code>delete_selection_noyank</code></td></tr>
 <tr><td><code>c</code></td><td>Change selection (delete and enter insert mode)</td><td><code>change_selection</code></td></tr>
+<tr><td><code>Alt-c</code></td><td>Change selection (delete and enter insert mode, without yanking)</td><td><code>change_selection_noyank</code></td></tr>
 <tr><td><code>Ctrl-a</code></td><td>Increment object (number) under cursor</td><td><code>increment</code></td></tr>
 <tr><td><code>Ctrl-x</code></td><td>Decrement object (number) under cursor</td><td><code>decrement</code></td></tr>
 </tbody></table>
 <h4 id="shell"><a class="header" href="#shell">Shell</a></h4>
 <table><thead><tr><th>Key</th><th>Description</th><th>Command</th></tr></thead><tbody>
 <tr><td><code>|</code></td><td>Pipe each selection through shell command, replacing with output</td><td><code>shell_pipe</code></td></tr>
-<tr><td><code>A-|</code></td><td>Pipe each selection into shell command, ignoring output</td><td><code>shell_pipe_to</code></td></tr>
+<tr><td><code>Alt-|</code></td><td>Pipe each selection into shell command, ignoring output</td><td><code>shell_pipe_to</code></td></tr>
 <tr><td><code>!</code></td><td>Run shell command, inserting output before each selection</td><td><code>shell_insert_output</code></td></tr>
-<tr><td><code>A-!</code></td><td>Run shell command, appending output after each selection</td><td><code>shell_append_output</code></td></tr>
+<tr><td><code>Alt-!</code></td><td>Run shell command, appending output after each selection</td><td><code>shell_append_output</code></td></tr>
 </tbody></table>
 <h3 id="selection-manipulation"><a class="header" href="#selection-manipulation">Selection manipulation</a></h3>
 <table><thead><tr><th>Key</th><th>Description</th><th>Command</th></tr></thead><tbody>
 <tr><td><code>s</code></td><td>Select all regex matches inside selections</td><td><code>select_regex</code></td></tr>
 <tr><td><code>S</code></td><td>Split selection into subselections on regex matches</td><td><code>split_selection</code></td></tr>
 <tr><td><code>Alt-s</code></td><td>Split selection on newlines</td><td><code>split_selection_on_newline</code></td></tr>
+<tr><td><code>&amp;</code></td><td>Align selection in columns</td><td><code>align_selections</code></td></tr>
 <tr><td><code>_</code></td><td>Trim whitespace from the selection</td><td><code>trim_selections</code></td></tr>
 <tr><td><code>;</code></td><td>Collapse selection onto a single cursor</td><td><code>collapse_selection</code></td></tr>
 <tr><td><code>Alt-;</code></td><td>Flip selection cursor and anchor</td><td><code>flip_selections</code></td></tr>
@@ -275,17 +278,19 @@ over text and not actively editing it).</p>
 <table><thead><tr><th>Key</th><th>Description</th><th>Command</th></tr></thead><tbody>
 <tr><td><code>g</code></td><td>Go to the start of the file</td><td><code>goto_file_start</code></td></tr>
 <tr><td><code>e</code></td><td>Go to the end of the file</td><td><code>goto_last_line</code></td></tr>
+<tr><td><code>f</code></td><td>Go to files in the selection</td><td><code>goto_file</code></td></tr>
 <tr><td><code>h</code></td><td>Go to the start of the line</td><td><code>goto_line_start</code></td></tr>
 <tr><td><code>l</code></td><td>Go to the end of the line</td><td><code>goto_line_end</code></td></tr>
 <tr><td><code>s</code></td><td>Go to first non-whitespace character of the line</td><td><code>goto_first_nonwhitespace</code></td></tr>
 <tr><td><code>t</code></td><td>Go to the top of the screen</td><td><code>goto_window_top</code></td></tr>
-<tr><td><code>m</code></td><td>Go to the middle of the screen</td><td><code>goto_window_middle</code></td></tr>
+<tr><td><code>c</code></td><td>Go to the middle of the screen</td><td><code>goto_window_center</code></td></tr>
 <tr><td><code>b</code></td><td>Go to the bottom of the screen</td><td><code>goto_window_bottom</code></td></tr>
 <tr><td><code>d</code></td><td>Go to definition (<strong>LSP</strong>)</td><td><code>goto_definition</code></td></tr>
 <tr><td><code>y</code></td><td>Go to type definition (<strong>LSP</strong>)</td><td><code>goto_type_definition</code></td></tr>
 <tr><td><code>r</code></td><td>Go to references (<strong>LSP</strong>)</td><td><code>goto_reference</code></td></tr>
 <tr><td><code>i</code></td><td>Go to implementation (<strong>LSP</strong>)</td><td><code>goto_implementation</code></td></tr>
 <tr><td><code>a</code></td><td>Go to the last accessed/alternate file</td><td><code>goto_last_accessed_file</code></td></tr>
+<tr><td><code>m</code></td><td>Go to the last modified/alternate file</td><td><code>goto_last_modified_file</code></td></tr>
 <tr><td><code>n</code></td><td>Go to next buffer</td><td><code>goto_next_buffer</code></td></tr>
 <tr><td><code>p</code></td><td>Go to previous buffer</td><td><code>goto_previous_buffer</code></td></tr>
 <tr><td><code>.</code></td><td>Go to last modification in current file</td><td><code>goto_last_modification</code></td></tr>
@@ -310,6 +315,8 @@ and <a href="./usage.html#textobject">textobject</a> usage.</p>
 <tr><td><code>v</code>, <code>Ctrl-v</code></td><td>Vertical right split</td><td><code>vsplit</code></td></tr>
 <tr><td><code>s</code>, <code>Ctrl-s</code></td><td>Horizontal bottom split</td><td><code>hsplit</code></td></tr>
 <tr><td><code>h</code>, <code>Ctrl-h</code>, <code>left</code></td><td>Move to left split</td><td><code>jump_view_left</code></td></tr>
+<tr><td><code>f</code></td><td>Go to files in the selection in horizontal splits</td><td><code>goto_file</code></td></tr>
+<tr><td><code>F</code></td><td>Go to files in the selection in vertical splits</td><td><code>goto_file</code></td></tr>
 <tr><td><code>j</code>, <code>Ctrl-j</code>, <code>down</code></td><td>Move to split below</td><td><code>jump_view_down</code></td></tr>
 <tr><td><code>k</code>, <code>Ctrl-k</code>, <code>up</code></td><td>Move to split above</td><td><code>jump_view_up</code></td></tr>
 <tr><td><code>l</code>, <code>Ctrl-l</code>, <code>right</code></td><td>Move to right split</td><td><code>jump_view_right</code></td></tr>
@@ -407,7 +414,7 @@ implemented for all movement commands yet.</p>
 <tr><td><code>Ctrl-u</code></td><td>Delete to start of line</td></tr>
 <tr><td><code>Ctrl-k</code></td><td>Delete to end of line</td></tr>
 <tr><td><code>backspace</code>, <code>Ctrl-h</code></td><td>Delete previous char</td></tr>
-<tr><td><code>delete</code>, <code>Ctrl-d</code></td><td>Delete previous char</td></tr>
+<tr><td><code>delete</code>, <code>Ctrl-d</code></td><td>Delete next char</td></tr>
 <tr><td><code>Ctrl-s</code></td><td>Insert a word under doc cursor, may be changed to Ctrl-r Ctrl-w later</td></tr>
 <tr><td><code>Ctrl-p</code>, <code>Up</code></td><td>Select previous history</td></tr>
 <tr><td><code>Ctrl-n</code>, <code>Down</code></td><td>Select next history</td></tr>
