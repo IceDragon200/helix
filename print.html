@@ -154,6 +154,11 @@ shell for working on Helix.</p>
 <h3 id="arch-linux"><a class="header" href="#arch-linux">Arch Linux</a></h3>
 <p>Releases are available in the <code>community</code> repository.</p>
 <p>A <a href="https://aur.archlinux.org/packages/helix-git/">helix-git</a> package is also available on the AUR, which builds the master branch.</p>
+<h3 id="fedora-linux"><a class="header" href="#fedora-linux">Fedora Linux</a></h3>
+<p>You can install the COPR package for Helix via</p>
+<pre><code>sudo dnf copr enable varlad/helix
+sudo dnf install helix
+</code></pre>
 <h2 id="build-from-source"><a class="header" href="#build-from-source">Build from source</a></h2>
 <pre><code>git clone --recurse-submodules --shallow-submodules -j8 https://github.com/helix-editor/helix
 cd helix
@@ -369,7 +374,7 @@ over text and not actively editing it).</p>
 <h4 id="goto-mode"><a class="header" href="#goto-mode">Goto mode</a></h4>
 <p>Jumps to various locations.</p>
 <table><thead><tr><th>Key</th><th>Description</th><th>Command</th></tr></thead><tbody>
-<tr><td><code>g</code></td><td>Go to the start of the file</td><td><code>goto_file_start</code></td></tr>
+<tr><td><code>g</code></td><td>Go to line number <code>&lt;n&gt;</code> else start of file</td><td><code>goto_file_start</code></td></tr>
 <tr><td><code>e</code></td><td>Go to the end of the file</td><td><code>goto_last_line</code></td></tr>
 <tr><td><code>f</code></td><td>Go to files in the selection</td><td><code>goto_file</code></td></tr>
 <tr><td><code>h</code></td><td>Go to the start of the line</td><td><code>goto_line_start</code></td></tr>
@@ -570,9 +575,13 @@ specific indent settings, etc see the default
 <tr><td>c</td><td>✓</td><td></td><td></td><td><code>clangd</code></td></tr>
 <tr><td>c-sharp</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>cmake</td><td>✓</td><td></td><td></td><td><code>cmake-language-server</code></td></tr>
+<tr><td>comment</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>cpp</td><td>✓</td><td></td><td></td><td><code>clangd</code></td></tr>
 <tr><td>css</td><td>✓</td><td></td><td></td><td></td></tr>
+<tr><td>dart</td><td>✓</td><td></td><td>✓</td><td><code>dart</code></td></tr>
+<tr><td>dockerfile</td><td>✓</td><td></td><td></td><td><code>docker-langserver</code></td></tr>
 <tr><td>elixir</td><td>✓</td><td></td><td></td><td><code>elixir-ls</code></td></tr>
+<tr><td>fish</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
 <tr><td>glsl</td><td>✓</td><td></td><td>✓</td><td></td></tr>
 <tr><td>go</td><td>✓</td><td>✓</td><td>✓</td><td><code>gopls</code></td></tr>
 <tr><td>html</td><td>✓</td><td></td><td></td><td></td></tr>
@@ -584,11 +593,12 @@ specific indent settings, etc see the default
 <tr><td>ledger</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>llvm</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>lua</td><td>✓</td><td></td><td>✓</td><td></td></tr>
+<tr><td>markdown</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>mint</td><td></td><td></td><td></td><td><code>mint</code></td></tr>
 <tr><td>nix</td><td>✓</td><td></td><td>✓</td><td><code>rnix-lsp</code></td></tr>
 <tr><td>ocaml</td><td>✓</td><td></td><td>✓</td><td></td></tr>
 <tr><td>ocaml-interface</td><td>✓</td><td></td><td></td><td></td></tr>
-<tr><td>perl</td><td>✓</td><td>✓</td><td></td><td></td></tr>
+<tr><td>perl</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
 <tr><td>php</td><td>✓</td><td></td><td>✓</td><td></td></tr>
 <tr><td>prolog</td><td></td><td></td><td></td><td><code>swipl</code></td></tr>
 <tr><td>protobuf</td><td>✓</td><td></td><td>✓</td><td></td></tr>
@@ -596,6 +606,7 @@ specific indent settings, etc see the default
 <tr><td>racket</td><td></td><td></td><td></td><td><code>racket</code></td></tr>
 <tr><td>ruby</td><td>✓</td><td></td><td></td><td><code>solargraph</code></td></tr>
 <tr><td>rust</td><td>✓</td><td>✓</td><td>✓</td><td><code>rust-analyzer</code></td></tr>
+<tr><td>scala</td><td>✓</td><td></td><td>✓</td><td><code>metals</code></td></tr>
 <tr><td>svelte</td><td>✓</td><td></td><td>✓</td><td><code>svelteserver</code></td></tr>
 <tr><td>toml</td><td>✓</td><td></td><td></td><td></td></tr>
 <tr><td>tsq</td><td>✓</td><td></td><td></td><td></td></tr>
@@ -638,6 +649,7 @@ single width selection.</p>
 <tr><td><code>idle-timeout</code></td><td>Time in milliseconds since last keypress before idle timers trigger. Used for autocompletion, set to 0 for instant.</td><td><code>400</code></td></tr>
 <tr><td><code>completion-trigger-len</code></td><td>The min-length of word under cursor to trigger autocompletion</td><td><code>2</code></td></tr>
 <tr><td><code>auto-info</code></td><td>Whether to display infoboxes</td><td><code>true</code></td></tr>
+<tr><td><code>true-color</code></td><td>Set to <code>true</code> to override automatic detection of terminal truecolor support in the event of a false negative.</td><td><code>false</code></td></tr>
 </tbody></table>
 <p><code>[editor.filepicker]</code> section of the config. Sets options for file picker and global search. All but the last key listed in the default file-picker configuration below are IgnoreOptions: whether hidden files and files listed within ignore files are ignored by (not visible in) the helix file picker and global search. There is also one other key, <code>max-depth</code> available, which is not defined by default.</p>
 <table><thead><tr><th>Key</th><th>Description</th><th>Default</th></tr></thead><tbody>
@@ -732,6 +744,9 @@ over it and is merged into the default palette.</p>
 <ul>
 <li><code>builtin</code> - Primitive types provided by the language (<code>int</code>, <code>usize</code>)</li>
 </ul>
+</li>
+<li>
+<p><code>constructor</code></p>
 </li>
 <li>
 <p><code>constant</code> (TODO: constant.other.placeholder for %v)</p>
@@ -834,6 +849,33 @@ over it and is merged into the default palette.</p>
 </li>
 <li>
 <p><code>namespace</code></p>
+</li>
+<li>
+<p><code>markup</code></p>
+<ul>
+<li><code>heading</code></li>
+<li><code>list</code>
+<ul>
+<li><code>unnumbered</code></li>
+<li><code>numbered</code></li>
+</ul>
+</li>
+<li><code>bold</code></li>
+<li><code>italic</code></li>
+<li><code>link</code>
+<ul>
+<li><code>url</code></li>
+<li><code>label</code></li>
+</ul>
+</li>
+<li><code>quote</code></li>
+<li><code>raw</code>
+<ul>
+<li><code>inline</code></li>
+<li><code>block</code></li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h4 id="interface"><a class="header" href="#interface">Interface</a></h4>
@@ -966,7 +1008,17 @@ directory</a>.</p>
 <tr><td>config</td><td>Language server configuration</td></tr>
 </tbody></table>
 <h2 id="queries"><a class="header" href="#queries">Queries</a></h2>
-<p>For a language to have syntax-highlighting and indentation among other things, you have to add queries. Add a directory for your language with the path <code>runtime/queries/&lt;name&gt;/</code>. The tree-sitter <a href="https://tree-sitter.github.io/tree-sitter/syntax-highlighting#queries">website</a> gives more info on how to write queries.</p>
+<p>For a language to have syntax-highlighting and indentation among
+other things, you have to add queries. Add a directory for your
+language with the path <code>runtime/queries/&lt;name&gt;/</code>. The tree-sitter
+<a href="https://tree-sitter.github.io/tree-sitter/syntax-highlighting#queries">website</a>
+gives more info on how to write queries.</p>
+<blockquote>
+<p>NOTE: When evaluating queries, the first matching query takes
+precedence, which is different from other editors like neovim where
+the last matching query supercedes the ones before it. See
+<a href="https://github.com/helix-editor/helix/pull/1170#issuecomment-997294090">this issue</a> for an example.</p>
+</blockquote>
 <h2 id="common-issues"><a class="header" href="#common-issues">Common Issues</a></h2>
 <ul>
 <li>
