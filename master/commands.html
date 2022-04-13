@@ -149,7 +149,10 @@
 <tr><td><code>:buffer-close-others!</code>, <code>:bco!</code>, <code>:bcloseother!</code></td><td>Close all buffers but the currently focused one.</td></tr>
 <tr><td><code>:buffer-close-all</code>, <code>:bca</code>, <code>:bcloseall</code></td><td>Close all buffers, without quiting.</td></tr>
 <tr><td><code>:buffer-close-all!</code>, <code>:bca!</code>, <code>:bcloseall!</code></td><td>Close all buffers forcefully (ignoring unsaved changes), without quiting.</td></tr>
+<tr><td><code>:buffer-next</code>, <code>:bn</code>, <code>:bnext</code></td><td>Go to next buffer.</td></tr>
+<tr><td><code>:buffer-previous</code>, <code>:bp</code>, <code>:bprev</code></td><td>Go to previous buffer.</td></tr>
 <tr><td><code>:write</code>, <code>:w</code></td><td>Write changes to disk. Accepts an optional path (:write some/path.txt)</td></tr>
+<tr><td><code>:write!</code>, <code>:w!</code></td><td>Write changes to disk forcefully (creating necessary subdirectories). Accepts an optional path (:write some/path.txt)</td></tr>
 <tr><td><code>:new</code>, <code>:n</code></td><td>Create a new scratch buffer.</td></tr>
 <tr><td><code>:format</code>, <code>:fmt</code></td><td>Format the file using the LSP formatter.</td></tr>
 <tr><td><code>:indent-style</code></td><td>Set the indentation style for editing. ('t' for tabs or 1-8 for number of spaces.)</td></tr>
@@ -191,6 +194,7 @@
 <tr><td><code>:hsplit-new</code>, <code>:hnew</code></td><td>Open a scratch buffer in a horizontal split.</td></tr>
 <tr><td><code>:tutor</code></td><td>Open the tutorial.</td></tr>
 <tr><td><code>:goto</code>, <code>:g</code></td><td>Go to line number.</td></tr>
+<tr><td><code>:set-language</code>, <code>:lang</code></td><td>Set the language of current buffer.</td></tr>
 <tr><td><code>:set-option</code>, <code>:set</code></td><td>Set a config option at runtime</td></tr>
 <tr><td><code>:sort</code></td><td>Sort ranges in selection.</td></tr>
 <tr><td><code>:rsort</code></td><td>Sort ranges in selection in reverse order.</td></tr>
