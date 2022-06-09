@@ -237,6 +237,7 @@
 <tr><td><code>%</code></td><td>Select entire file</td><td><code>select_all</code></td></tr>
 <tr><td><code>x</code></td><td>Select current line, if already selected, extend to next line</td><td><code>extend_line</code></td></tr>
 <tr><td><code>X</code></td><td>Extend selection to line bounds (line-wise selection)</td><td><code>extend_to_line_bounds</code></td></tr>
+<tr><td><code>Alt-x</code></td><td>Shrink selection to line bounds (line-wise selection)</td><td><code>shrink_to_line_bounds</code></td></tr>
 <tr><td><code>J</code></td><td>Join lines inside selection</td><td><code>join_selections</code></td></tr>
 <tr><td><code>K</code></td><td>Keep selections matching the regex</td><td><code>keep_selections</code></td></tr>
 <tr><td><code>Alt-K</code></td><td>Remove selections matching the regex</td><td><code>remove_selections</code></td></tr>
@@ -333,6 +334,10 @@ and <a href="./usage.html#textobject">textobject</a> usage.</p>
 <tr><td><code>l</code>, <code>Ctrl-l</code>, <code>Right</code></td><td>Move to right split</td><td><code>jump_view_right</code></td></tr>
 <tr><td><code>q</code>, <code>Ctrl-q</code></td><td>Close current window</td><td><code>wclose</code></td></tr>
 <tr><td><code>o</code>, <code>Ctrl-o</code></td><td>Only keep the current window, closing all the others</td><td><code>wonly</code></td></tr>
+<tr><td><code>H</code></td><td>Swap window to the left</td><td><code>swap_view_left</code></td></tr>
+<tr><td><code>J</code></td><td>Swap window downwards</td><td><code>swap_view_down</code></td></tr>
+<tr><td><code>K</code></td><td>Swap window upwards</td><td><code>swap_view_up</code></td></tr>
+<tr><td><code>L</code></td><td>Swap window to the right</td><td><code>swap_view_right</code></td></tr>
 </tbody></table>
 <h4 id="space-mode"><a class="header" href="#space-mode">Space mode</a></h4>
 <p>This layer is a kludge of mappings, mostly pickers.</p>
